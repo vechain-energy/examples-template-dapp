@@ -34,11 +34,11 @@ $ node scripts/deploy-contract.js Test Test2
 
 Deploying to **TEST** network
 
-ℹ [Test] Artifact written to src/contracts/Test.json
+ℹ [Test] Artifact written to src/contracts/test/Test.json
 ℹ [Test] Transaction Id: 0x41d66727ef8585251325231e2fdd0d1f5141b1ff4344f640d1afe723140185e9
 ✔ [Test] Contract is now available at 0xe60E58731d22E683C6D4930B9c04F66cDbD7b789
 
-ℹ [Test2] Artifact written to src/contracts/Test2.json
+ℹ [Test2] Artifact written to src/contracts/test/Test2.json
 ℹ [Test2] Transaction Id: 0x2843ed8c3720958e7e6170a42f5697abf07ede596c3219520debbb9c6e3974b3
 ✔ [Test2] Contract is now available at 0x35Ff9586FB5a75bE3d94D7145449C848c51e6254
 
