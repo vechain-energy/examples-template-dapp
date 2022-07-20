@@ -18,7 +18,7 @@ async function main () {
   // ensure artifact directory in web app exists
   const networkArtifactsDir = `${ARTIFACTS_DIR}/${network}`
   if (!existsSync(networkArtifactsDir)) {
-    mkdirSync(networkArtifactsDir)
+    mkdirSync(networkArtifactsDir, { recursive: true })
   }
 
   for (const contractName of contractNames) {

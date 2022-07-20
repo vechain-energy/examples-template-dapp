@@ -45,7 +45,7 @@ async function main () {
     const transaction = await contract[functionName](...args)
     const result = await transaction.wait()
     for (const event of result.events) {
-      call.info(`[${contractName}] emitted  ${event.eventSignature}`)
+      call.info(`[${contractName}] emitted ${event.eventSignature}`)
       call.info(`[${contractName}] \n${JSON.stringify(event.args, '', 2)}`)
     }
     call.info(`[${contractName}] Gas costs: ${result.gasUsed} VTHO`)

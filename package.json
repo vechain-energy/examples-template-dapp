@@ -2,6 +2,12 @@
   "name": "battlestation",
   "version": "0.1.0",
   "private": true,
+  "author": "favo <npm@favo.org>",
+  "license": "MIT",
+  "description": "hardhart plugin that provides VeChain Thor connectivity",
+  "repository": "https://gitlab.com/vechain.energy/examples/template-dapp.git",
+  "bugs": "https://gitlab.com/vechain.energy/examples/template-dapp/-/issues",
+  "homepage": "https://vechain.energy",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -25,7 +31,8 @@
     "contract:build": "hardhat compile",
     "contract:deploy": "node scripts/deploy-contract.js",
     "contract:deploy:proxy": "node scripts/deploy-proxy.js",
-    "contract:deploy:upgrade": "node scripts/deploy-upgrade.js"
+    "contract:deploy:upgrade": "node scripts/deploy-upgrade.js",
+    "contract:call": "node scripts/contract-call.js"
   },
   "eslintConfig": {
     "extends": [

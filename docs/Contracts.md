@@ -94,6 +94,7 @@ Deploying to **TEST** network
 **Example**
 
 ```shell
+$ yarn contract:call UpgradeableContract transferOwnership 0x105199a26b10e55300CB71B46c5B5e867b7dF427
 $ node scripts/contract-call.js UpgradeableContract transferOwnership 0x105199a26b10e55300CB71B46c5B5e867b7dF427
 
 Working on **TEST** network
