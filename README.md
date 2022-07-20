@@ -1,12 +1,15 @@
-# Getting Started with Create React App
+# Getting Started with dApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+What you need to do:
+
+1. Configure your own `privateKey` in `hardhat.config.js` _(generate one with: `` echo 0x`openssl rand -hex 32` ``)_
+1. Put your contracts in `contracts` and build your react application in `src`
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn react:start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,12 +17,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `yarn test`
+### `yarn react:test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `yarn react:build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +32,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `yarn react:eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
@@ -39,32 +42,49 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### `yarn contract:test`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Runs the test runner in the none-interactive mode.
+### `yarn contract:test:watch`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Launches the test runner in the interactive watch mode.
 
-### Code Splitting
+### `yarn contract:build`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Shortcut for `npx hardhat compile` which compiles the contracts
 
-### Analyzing the Bundle Size
+### `yarn contract:deploy`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Deploy contracts by name to the network. Append one or more contract names seperated by space to the command.
 
-### Making a Progressive Web App
+Contract information for access within the react application is written to `src/contracts/<NetworkName>/<ContractName>.json`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `yarn contract:deploy:proxy`
 
-### Advanced Configuration
+Deploy contracts by name to the network. Append one or more contract names seperated by space to the command.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Each contract must be upgradeable. For each contract proxy will be deployed and pointed to the deployment.
 
-### Deployment
+Contract information for access within the react application is written to `src/contracts/<NetworkName>/<ContractName>.json`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `yarn contract:deploy:upgrade`
 
-### `yarn build` fails to minify
+Deploy contracts by name to the network. Append one or more contract names seperated by space to the command.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Existing proxy deployments will be upgraded to point to the new location. The proxy address is read from previous deployments information in `src/contracts/<NetworkName>/<ContractName>.json`
+
+### `yarn contract:call`
+
+Calls a function on a deployed contract. ABI information and address are read from `src/contracts/<NetworkName>/<ContractName>.json`.
+
+Private Key for transactions is used from `hardhat.config.js`.
+
+## Config
+
+### Network
+
+* `hardhat.config.js` contains
+  * network configuration
+  * private keys for deployment user
+  * fee delegation sponsor
+* prefix calls with `NETWORK=<network name>` to target a specific network
