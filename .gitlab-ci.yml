@@ -1,0 +1,7 @@
+test:
+  stage: test
+  image: node:16
+  script:
+    - yarn
+    - yarn contract:test
+    - yarn react:test
