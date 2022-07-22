@@ -1,25 +1,20 @@
-import logo from './logo.svg'
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import { Row, Col } from 'antd'
+import Menu from './Menu'
+import Account from './common/Account'
+import Network from './common/Network'
 
-function App () {
+export default function App () {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Row gutter={[16, 16]}>
+      <Col span={24} />
+      <Col span={6}><Menu /></Col>
+      <Col span={18}>
+        <Routes>
+          <Route path='/account' element={<Account />} />
+          <Route path='/network' element={<Network />} />
+        </Routes>
+      </Col>
+    </Row>
   )
 }
-
-export default App
