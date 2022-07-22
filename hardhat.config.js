@@ -2,6 +2,8 @@ require('@nomiclabs/hardhat-waffle')
 require('@vechain.energy/hardhat-thor')
 require('hardhat-jest-plugin')
 require('hardhat-contract-sizer')
+require('@typechain/hardhat')
+require('@nomiclabs/hardhat-ethers')
 
 module.exports = {
   solidity: '0.8.4',

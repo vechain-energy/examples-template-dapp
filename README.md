@@ -4,6 +4,28 @@ What you need to do:
 
 1. Configure your own `privateKey` in `hardhat.config.js` _(generate one with: `` echo 0x`openssl rand -hex 32` ``)_
 1. Put your contracts in `contracts` and build your react application in `src`
+  1. Example Contracts and Tests are already in `contracts` for demonstration purpose
+
+
+```
+$ tree -L 1 -I node_modules -I *.lock -I *.log -I docs
+.
+├── README.md
+├── artifacts                   Contract artifacts
+├── cache                       Contract build cache
+├── config-overrides.js         React webpack configuration overrides
+├── contracts                   ! Contracts
+├── hardhat.config.js           ! network configuration
+├── jest.config.js
+├── package.json
+├── public
+├── scripts                     ! deployment helper scripts
+├── src                         ! React application
+└── tests                       optional secondary location for contract tests
+
+7 directories, 5 files
+
+```
 
 ## Available Scripts
 
@@ -51,7 +73,8 @@ Launches the test runner in the interactive watch mode.
 
 ### `yarn contract:build`
 
-Shortcut for `npx hardhat compile` which compiles the contracts
+* Shortcut for `npx hardhat compile` which compiles the contracts
+* Also builds TypeScript bindings in `typechain-types`
 
 ### `yarn contract:deploy`
 

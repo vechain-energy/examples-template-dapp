@@ -28,7 +28,7 @@
     "react:eject": "react-app-rewired eject",
     "contract:test": "hardhat test:jest",
     "contract:test:watch": "nodemon -e sol --exec 'hardhat test:jest --watch'",
-    "contract:build": "hardhat compile",
+    "contract:build": "hardhat typechain",
     "contract:deploy": "node scripts/deploy-contract.js",
     "contract:deploy:proxy": "node scripts/deploy-proxy.js",
     "contract:deploy:upgrade": "node scripts/deploy-upgrade.js",
@@ -63,6 +63,8 @@
     "@nomiclabs/hardhat-web3": "^2.0.0",
     "@openzeppelin/contracts": "^4.7.0",
     "@openzeppelin/contracts-upgradeable": "^4.7.0",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@typechain/hardhat": "^6.1.2",
     "@vechain.energy/hardhat-thor": "^0.2.4",
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
@@ -81,6 +83,7 @@
     "stream": "^0.0.2",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
+    "typechain": "^8.1.0",
     "util": "^0.12.4",
     "web3-eth-abi": "^1.7.4"
   }
